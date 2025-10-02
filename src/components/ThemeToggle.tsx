@@ -7,7 +7,7 @@ export const ThemeToggle: React.FC = () => {
 
   return (
     <button onClick={toggleTheme} aria-label="Toggle theme"
-      className="relative w-10 h-10 rounded-full bg-neutral-100 dark:bg-neutral-800 border border-neutral-400 dark:border-neutral-600 flex items-center justify-center transition-all duration-300 hover:shadow-md cursor-pointer">
+      className="relative w-10 h-10 rounded-full bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-600 flex items-center justify-center transition-all duration-300 hover:shadow-sm cursor-pointer">
 
       <div className="relative w-5 h-5">
         <Sun className={`absolute inset-0 w-5 h-5 transition-all duration-300 ${
