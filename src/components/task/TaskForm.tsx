@@ -5,7 +5,7 @@ import { useTasks } from "../../context/TaskContext";
 export const TaskForm: React.FC = () => {
   const { addTask } = useTasks();
   const [title, setTitle] = useState("");
-  const [isFocused, setIsFocused] = useState(false);
+  const [, setIsFocused] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
