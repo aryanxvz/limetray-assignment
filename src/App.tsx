@@ -9,12 +9,16 @@ import './App.css';
 
 const AppContent: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-neutral-950 transition-all">
-      <div className="container mx-auto px-4 py-6">
+    <div className="min-h-screen bg-gray-50 dark:bg-neutral-950 transition-all flex flex-col">
+      <div className="container mx-auto px-4 py-6 flex-1 flex flex-col">
         <Header />
-        <div className="sm:px-2 sm:py-3">
+        <div className="sm:px-2 sm:py-3 flex-1 flex flex-col">
           <TaskForm />
           <TaskList />
+        </div>
+      </div>
+      <div className="container mx-auto px-4 pb-6">
+        <div className="sm:px-2">
           <Filters />
         </div>
       </div>

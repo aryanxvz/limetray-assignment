@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useTasks } from "../../context/TaskContext";
 import type { Task } from "../../utils/type";
+import { Trash2 } from "lucide-react";
 
 interface Props {
   task: Task;
@@ -23,7 +24,6 @@ export const TaskItem: React.FC<Props> = React.memo(({ task }) => {
                  rounded-xl border border-gray-100 dark:border-neutral-700/50
                  shadow-sm hover:shadow-md dark:shadow-neutral-900/20
                  transition-all duration-300"
-        whileHover={{ scale: 1.01 }}
       >
         <label className="flex items-center gap-3 sm:gap-4 flex-1 cursor-pointer">
           <motion.div className="relative flex items-center justify-center"
@@ -72,15 +72,12 @@ export const TaskItem: React.FC<Props> = React.memo(({ task }) => {
           className="ml-2 sm:ml-4 p-2 rounded-lg text-red-500 hover:text-red-600 
                    hover:bg-red-50 dark:hover:bg-red-900/20
                    transition-all duration-200 flex-shrink-0"
-          whileHover={{ scale: 1.1, rotate: 90 }}
           whileTap={{ scale: 0.9 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: isHovered ? 1 : 0.7 }}
           transition={{ duration: 0.2 }}
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          <Trash2 />
         </motion.button>
       </motion.div>
     </motion.div>

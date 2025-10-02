@@ -40,17 +40,17 @@ export const TaskList: React.FC = () => {
   };
 
   return (
-    <motion.div className="mb-6"
+    <motion.div className={`mb-6 flex-1 ${tasks.length === 0 ? 'flex items-center justify-center' : ''}`}
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }}
     >
       <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
         <SortableContext items={tasks.map(t => t.id)} strategy={verticalListSortingStrategy}>
-          <div className="space-y-3">
+          <div className={`w-full ${tasks.length === 0 ? '' : 'space-y-3'}`}>
             <AnimatePresence mode="popLayout">
               {tasks.length === 0 ? (
                 <motion.div key="empty-state"
                   initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}
-                  className="text-center py-12 sm:py-16"
+                  className="text-center"
                 >
                   <motion.div animate={{ y: [0, -10, 0]}}
                     transition={{duration: 2, repeat: Infinity, ease: "easeInOut"}}
